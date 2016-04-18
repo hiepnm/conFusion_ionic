@@ -80,4 +80,11 @@ angular.module('conFusion', ['ionic', 'conFusion.controllers', 'conFusion.servic
   });
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/home');
-});
+})
+.config(function($ionicConfigProvider)   {
+  // if (ionic.Platform.isAndroid()) {
+  //   console.log("isAndroid");
+  //   $ionicConfigProvider.scrolling.jsScrolling(false);
+  // }
+})
+;
