@@ -177,9 +177,19 @@ angular.module('conFusion.controllers', [])
 }])
 
 .controller('AboutController', ['$scope', 'corporateFactory', function($scope, corporateFactory) {
+  $scope.showLeaders = false;
+  $scope.message = "Loading...";
+  $scope.leaders = corporateFactory.query(
+    function(response) {
+      $scope.leaders = response;
+      $scope.showLeaders = true;
+      console.log($scope.leaders);
+    },
+    function(response) {
+      $scope.message = "Error: "+response.status + " " + response.statusText;
+    }
+  );
 
-  $scope.leaders = corporateFactory.query();
-  console.log($scope.leaders);
 
 }])
 
