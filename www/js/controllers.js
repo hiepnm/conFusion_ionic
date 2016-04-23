@@ -176,14 +176,14 @@ angular.module('conFusion.controllers', [])
 
 }])
 
-.controller('AboutController', ['$scope', 'corporateFactory', function($scope, corporateFactory) {
+.controller('AboutController', ['$scope', 'corporateFactory', 'baseURL', function($scope, corporateFactory, baseURL) {
   $scope.showLeaders = false;
   $scope.message = "Loading...";
+  $scope.baseURL = baseURL;
   $scope.leaders = corporateFactory.query(
     function(response) {
       $scope.leaders = response;
       $scope.showLeaders = true;
-      console.log($scope.leaders);
     },
     function(response) {
       $scope.message = "Error: "+response.status + " " + response.statusText;
