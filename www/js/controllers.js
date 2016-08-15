@@ -190,13 +190,13 @@ angular.module('conFusion.controllers', [])
   }).then(function(modal) {
     $scope.modal = modal;
   });
+  //Commnet Controller
   $scope.openComment = function() {
     $scope.modal.show();
+    $scope.mycomment = {rating:5, comment:"", author:"", date:""};
     $scope.popover.hide();
   }
 
-  //Commnet Controller
-  $scope.mycomment = {rating:5, comment:"", author:"", date:""};
   $scope.submitComment = function () {
 
     $scope.modal.hide();

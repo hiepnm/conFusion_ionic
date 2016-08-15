@@ -6,7 +6,7 @@
     </div>
   </ion-header-bar>
   <ion-content>
-    <form id="reserveForm" name="reserveForm" ng-submit="doReserve()">
+    <form id="reserveForm" name="reserveForm" ng-submit="submitComment()">
       <div class="list">
         <label class="item item-input item-select">
           <span class="input-label">Rating</span>
@@ -24,7 +24,7 @@
           <textarea ng-model="mycomment.comment"></textarea>
         </label>
         <label class="item">
-          <button class="button button-block button-positive" ng-click="submitComment()">Submit</button>
+          <button class="button button-block button-positive" type="submit">Submit</button>
         </label>
       </div>
     </form>
