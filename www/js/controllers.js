@@ -156,10 +156,6 @@ angular.module('conFusion.controllers', [])
 
 .controller('DishDetailController', ['$scope', '$stateParams', 'menuFactory', 'baseURL', '$ionicPopover', 'favoriteFactory', '$ionicModal', 'dish', function($scope, $stateParams, menuFactory, baseURL, $ionicPopover, favoriteFactory, $ionicModal, dish) {
   $scope.baseURL = baseURL;
-  $scope.dish = {};
-  $scope.showDish = false;
-  $scope.message="Loading ...";
-
   $scope.dish = dish;
   // .fromTemplateUrl() method
   $ionicPopover.fromTemplateUrl('templates/dish-detail-popover.html', {
@@ -168,13 +164,9 @@ angular.module('conFusion.controllers', [])
     $scope.popover = popover;
   });
   $scope.addFavorite = function(index) {
-    if ($scope.showDish) {
-      console.log("Add dish " + index + " to Favorite List");
-      favoriteFactory.addToFavorites(index);
-      $scope.popover.hide();
-    } else {
-      console.log("Loading is failed");
-    }
+    console.log("Add dish " + index + " to Favorite List");
+    favoriteFactory.addToFavorites(index);
+    $scope.popover.hide();
   }
   $ionicModal.fromTemplateUrl('templates/dish-comment.html', {
     scope: $scope
