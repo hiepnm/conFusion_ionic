@@ -8,3 +8,4 @@ plugins/
 resources/
 config.xml
 package.json
+www/lib
